@@ -15,7 +15,9 @@ namespace Parrot.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UserMap());
-            modelBuilder.ApplyConfiguration(new PostMap()); 
+            modelBuilder.ApplyConfiguration(new PostMap());
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

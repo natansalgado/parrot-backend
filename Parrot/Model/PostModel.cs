@@ -1,4 +1,5 @@
-﻿namespace Parrot.Model
+﻿
+namespace Parrot.Model
 {
     public class PostModel
     {
@@ -7,5 +8,10 @@
         public DateTime? PublishedDate { get; set; }
         public int? UserId { get; set; }
         public UserModel? User { get; set; }
+
+        public static implicit operator PostModel(List<PostModel> v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

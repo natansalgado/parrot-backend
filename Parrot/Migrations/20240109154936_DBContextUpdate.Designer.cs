@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Parrot.Data;
 
@@ -11,9 +12,10 @@ using Parrot.Data;
 namespace Parrot.Migrations
 {
     [DbContext(typeof(ParrotDBContext))]
-    partial class ParrotDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240109154936_DBContextUpdate")]
+    partial class DBContextUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,7 +40,7 @@ namespace Parrot.Migrations
                     b.Property<DateTime?>("PublishedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 1, 9, 15, 55, 39, 591, DateTimeKind.Utc).AddTicks(493));
+                        .HasDefaultValue(new DateTime(2024, 1, 9, 15, 49, 36, 622, DateTimeKind.Utc).AddTicks(9921));
 
                     b.Property<int?>("UserId")
                         .IsRequired()

@@ -13,7 +13,7 @@ namespace Parrot.Data.Maps
             builder.Property(x => x.PublishedDate).HasDefaultValue(DateTime.UtcNow);
             builder.Property(x => x.UserId).IsRequired();
 
-            builder.HasOne(x => x.User);
+            builder.HasOne(x => x.User).WithMany().HasForeignKey(x => x.UserId);
         }
     }
 }
